@@ -16,7 +16,7 @@ const RecentJobs = () => (
           <div key={idx} className="col-xs-12">
             <a className="item-block" href="/">
               <header>
-                <img src="./img/logo-google.jpg" alt="" />
+                <img src={job.image} alt="" />
                 <div className="hgroup">
                   <h4>{job.title}</h4>
                   <h5>{job.company}</h5>
