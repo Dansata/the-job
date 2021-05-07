@@ -7,16 +7,19 @@ import Header from "./Header";
 import Main from "./Form";
 
 const ApplyJob = () => {
+  const [jobDetail, setJobDetail] = useState([]);
   const { id } = useParams();
+  const getJobDetail = async () => {
+    const job = await getJob(id);
+    setJobDetail(job);
+  };
   useEffect(() => {
-    const theJob = getJob(id);
-  }, []);
-  const [theJob, setJob] = useState(null);
-  setJob(id);
+    getJobDetail();
+  }, [id]);
 
   return (
     <>
-      <Header />
+      <Header job={jobDetail} />
       <Main />
     </>
   );
